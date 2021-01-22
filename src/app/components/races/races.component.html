@@ -1,0 +1,46 @@
+<div class="app-div">
+  <mat-card *ngFor="let race of races">
+    <mat-card-title>{{ race.position == 1 ? race.position+'er' : race.position+'ème' }} - {{ race.name }}, {{
+      race.country }} - {{ race.created_at | date:'d/MM/y HH:mm' }}</mat-card-title>
+    <mat-card-subtitle>
+      Circuit rallycross : {{ race.length | number }} m - ({{ race.asphalt }}% asphalt et {{ race.gravel }}% gravel)
+    </mat-card-subtitle>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let lap of race.laps">
+          <div class="lap-line">
+            <div class="lap-number">
+              Tour {{ lap.lap +1 }}
+            </div>
+            <div class="lap-time">
+              {{ lap.time | number }}
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+        <mat-list-item>
+          <div class="lap-line">
+            <div class="lap-number">
+             <b>Total</b>
+            </div>
+            <div class="lap-time">
+              <b>{{ race.time }}</b>
+            </div>
+          </div>
+        </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<!--
+    <mat-card>
+      <mat-card-title>Circuit Rallycross</mat-card-title>
+      <mat-card-subtitle>longueur 1 149 m - (60% bitume et 40% off-road)</mat-card-subtitle>
+      <mat-card-content>
+        <img src="../../../assets/tracks/mettet.jpg">
+      </mat-card-content>
+      <mat-card-actions></mat-card-actions>
+      <mat-card-footer></mat-card-footer>
+    </mat-card>
+    -->

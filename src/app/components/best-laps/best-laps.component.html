@@ -1,0 +1,40 @@
+<div class="app-div">
+  <div class="fifty">
+    <h2>Personnal best laps</h2>
+      <mat-list>
+        <mat-list-item *ngFor="let lap of this.personnalBestLaps">
+          <div class="lap-line">
+            <div class="thirty">
+              {{ lap.name }}, {{ lap.country }}
+            </div>
+            <div class="thirty">
+              {{ lap.nickname }}
+            </div>
+            <div class="thirty">
+              {{ lap.time }}
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+        </mat-list>
+      </div>
+      <div class="fifty">
+        <h2>Best laps</h2>
+        <mat-list>
+          <mat-list-item *ngFor="let lap of this.bestLaps">
+            <div class="lap-line">
+              <div class="thirty">
+                {{ lap.name }}, {{ lap.country }}
+              </div>
+              <div class="thirty">
+                {{ lap.nickname }}
+              </div>
+              <div class="thirty">
+                {{ lap.time }}
+              </div>
+            </div>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+          </mat-list>
+        </div>
+</div>

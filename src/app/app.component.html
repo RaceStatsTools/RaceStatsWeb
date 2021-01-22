@@ -1,0 +1,20 @@
+<mat-sidenav-container>
+  <mat-sidenav #drawer fixedInViewport="true" [opened]="false">
+    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">ITEM1</a>
+      <a mat-list-item href="#">ITEM2</a>
+      <a mat-list-item href="#">ITEM3</a>
+      <a mat-list-item href="#">ITEM4</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="position-fixed">
+      <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+      <span>Race Stats for Dirt Rally 2.0 Rallycross</span>
+    </mat-toolbar>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

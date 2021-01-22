@@ -1,0 +1,11 @@
+
+        <mat-tab-group>
+            <mat-tab label="All">
+                <app-races trackId="0"></app-races>
+            </mat-tab>
+            <mat-tab *ngFor="let track of tracks" [label]="track.name">
+                <ng-template matTabContent>
+                    <app-races [trackId]="track.id"></app-races>
+                </ng-template>
+            </mat-tab>
+          </mat-tab-group>
