@@ -1,0 +1,30 @@
+<!--<div class="app-div">-->
+    <form (ngSubmit)="register()" [formGroup]="form">
+        <mat-card class="mt-10" *ngIf="!this.storeService.getUser()">
+            <mat-card-title>
+                Register
+            </mat-card-title>
+            <mat-card-content>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="email" formControlName="email">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" formControlName="password">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Nickname</mat-label>
+                        <input matInput type="text" formControlName="nickname">
+                    </mat-form-field>
+                    <br>
+                
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="primary" type="submit">Register</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+<!--</div>-->

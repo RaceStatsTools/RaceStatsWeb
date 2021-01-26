@@ -5,6 +5,7 @@ import { catchError } from 'rxjs/operators';
 import { StoreService } from './store.service';
 
 const meUrl = '/api/users/me';
+const registerUrl = '/api/users/';
 const loginUrl = '/api/auth/';
 const lapUrl = '/api/stats/laps/';
 const raceUrl = '/api/stats/races/';
@@ -58,6 +59,16 @@ export class ApiService {
       password: password
     }
     return this.http.post<any>(loginUrl, usr).pipe(
+      catchError(this.handleError));
+  }
+
+  register(email: string, password: string, nickname: string): Observable<any> {
+    var usr = {
+      email: email,
+      password: password,
+      nickname: nickname
+    }
+    return this.http.post<any>(registerUrl, usr).pipe(
       catchError(this.handleError));
   }
   

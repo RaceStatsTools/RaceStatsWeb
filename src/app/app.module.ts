@@ -14,6 +14,7 @@ import { ApiService } from './services/api.service';
 import { TracksComponent } from './components/tracks/tracks.component';
 import { RacesComponent } from './components/races/races.component';
 import { BestLapsComponent } from './components/best-laps/best-laps.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BestLapsComponent } from './components/best-laps/best-laps.component';
     LoginComponent,
     TracksComponent,
     RacesComponent,
-    BestLapsComponent
+    BestLapsComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
