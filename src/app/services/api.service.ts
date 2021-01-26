@@ -95,7 +95,7 @@ export class ApiService {
       catchError(this.handleError));
   }
 
-  listRacesByTrackId(id) : Observable<any> {
+  listUserRacesByTrackId(id) : Observable<any> {
     let url = racesByLengthUrl.replace(':id', id);
     return this.http.get<any>(url).pipe(
       catchError(this.handleError));

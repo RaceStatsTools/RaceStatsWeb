@@ -60,7 +60,7 @@ export class RacesComponent implements OnInit {
     } else {
       console.log('All tracks')
     }
-    this.apiService.listRacesByTrackId(this.trackId)
+    this.apiService.listUserRacesByTrackId(this.trackId)
     .subscribe(races => {
       this.races = races;
       this.dataSource.data = this.races
