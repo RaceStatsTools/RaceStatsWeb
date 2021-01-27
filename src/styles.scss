@@ -4,7 +4,9 @@ html, body { height: 100%; }
 body { 
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background: url(./assets/bg.png); 
+  background: url(./assets/bg.png);
+  display: flex;
+  flex-direction: column;
 }
 
 .mat-drawer-container {
@@ -13,6 +15,14 @@ body {
 
 .mat-tab-header {
   background-color: #303030 !important;
+}
+
+.alt-line {
+  background-color: rgb(130 130 130 / 20%)
+}
+
+.last-line {
+  background-color: rgb(130 130 130 / 20%)
 }
 
 /**
@@ -131,7 +141,7 @@ $mat-light-theme-background: (
 );
 
 // Dark bg
-$dark-background:     #2c2c2c;
+$dark-background:     rgba(44, 44, 44, 0.8);
 $dark-bg-lighter-5:   lighten($dark-background, 5%);
 $dark-bg-lighter-10:  lighten($dark-background, 10%);
 $dark-bg-lighter-20:  lighten($dark-background, 20%);

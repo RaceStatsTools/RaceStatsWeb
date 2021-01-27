@@ -1,13 +1,23 @@
 <div class="app-div">
   <mat-card *ngFor="let race of races">
-    <mat-card-title>{{ race.position == 1 ? race.position+'er' : race.position+'ème' }} - {{ race.name }}, {{
-      race.country }} - {{ race.created_at | date:'d/MM/y HH:mm' }}</mat-card-title>
+    <mat-card-title>
+      {{ race.position == 1 ? race.position+'er' : race.position+'ème' }} - {{ race.name }}, {{
+      race.country }}
+    </mat-card-title>
     <mat-card-subtitle>
       Circuit rallycross : {{ race.length | number }} m - ({{ race.asphalt }}% asphalt et {{ race.gravel }}% gravel)
     </mat-card-subtitle>
     <mat-card-content>
+      <div class="race-info">
+        <div class="race-info-picto"><mat-icon aria-hidden="false" aria-label="Example home icon">timer</mat-icon></div>
+        <div>{{ race.time }}</div>
+      </div>
+      <div class="race-info">
+        <div class="race-info-picto"><mat-icon aria-hidden="false" aria-label="Example home icon">date_range</mat-icon></div>
+        <div>{{ race.created_at | date:'d/MM/y HH:mm' }}</div>
+      </div>
       <mat-list>
-        <mat-list-item *ngFor="let lap of race.laps">
+        <mat-list-item *ngFor="let lap of race.laps;let i = index" [class.alt-line]="i%2 == 1">
           <div class="lap-line">
             <div class="lap-number">
               Tour {{ lap.lap +1 }}
@@ -18,7 +28,7 @@
           </div>
           <mat-divider></mat-divider>
         </mat-list-item>
-        <mat-list-item>
+        <!--<mat-list-item class="last-line">
           <div class="lap-line">
             <div class="lap-number">
              <b>Total</b>
@@ -27,13 +37,18 @@
               <b>{{ race.time }}</b>
             </div>
           </div>
-        </mat-list-item>
+        </mat-list-item>-->
         </mat-list>
     </mat-card-content>
   </mat-card>
-</div>
 
-<!--
+
+</div>
+<div class="footer">
+  <mat-paginator [length]="50" [pageSizeOptions]="[50, 100, 250]" >
+  </mat-paginator>
+</div>
+<!--(page)="onPageChanged($event)"
     <mat-card>
       <mat-card-title>Circuit Rallycross</mat-card-title>
       <mat-card-subtitle>longueur 1 149 m - (60% bitume et 40% off-road)</mat-card-subtitle>
