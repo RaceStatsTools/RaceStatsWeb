@@ -20,7 +20,23 @@
                         <input matInput type="text" formControlName="nickname">
                     </mat-form-field>
                     <br>
-                
+                    <mat-form-field appearance="fill">
+                    <mat-label>Choose you country</mat-label>
+                    <mat-select formControlName="country" required>
+                        <mat-select-trigger>
+                          <div style="display:flex; align-items: center;">
+                            <img src="assets/flags/{{ form.controls.country.value?.code }}.png" width="12" height="12" class="country-flag">
+                            {{ form.controls.country.value?.name }}
+                          </div>
+                        </mat-select-trigger>
+                        <mat-option *ngFor="let land of countries" [value]="land" >
+                          <div style="display:flex; align-items: center;">
+                            <img src="assets/flags/{{land.code}}.png" width="24" height="24" class="country-flag">
+                            {{ land.name }}
+                          </div>
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
             </mat-card-content>
             <mat-card-actions>
                 <button mat-raised-button color="primary" type="submit">Register</button>

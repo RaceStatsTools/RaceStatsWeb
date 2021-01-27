@@ -39,11 +39,12 @@ export class ApiService {
       catchError(this.handleError));
   }
 
-  register(email: string, password: string, nickname: string): Observable<any> {
+  register(email: string, password: string, nickname: string, country: string): Observable<any> {
     var usr = {
       email: email,
       password: password,
-      nickname: nickname
+      nickname: nickname,
+      country: country
     }
     return this.http.post<any>(registerUrl, usr).pipe(
       catchError(this.handleError));
