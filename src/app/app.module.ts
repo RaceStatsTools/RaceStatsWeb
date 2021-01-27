@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { Router } from '@angular/router';
+import { ToastrModule } from 'ngx-toastr';
 import { StoreService } from './services/store.service';
 import { ApiService } from './services/api.service';
 import { TracksComponent } from './components/tracks/tracks.component';
@@ -32,7 +33,8 @@ import { RegisterComponent } from './components/register/register.component';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     {

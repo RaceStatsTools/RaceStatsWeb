@@ -32,10 +32,7 @@ export class AuthInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     // Clone the request to add the new header.
         const token = this.storeService && this.storeService.getToken() ? this.storeService.getToken() : '';
-        console.log("intercept", this.storeService.getToken())
         let authReq = req.clone({headers: req.headers.set('Authorization', token)});
-        // authReq = req.clone({headers: req.headers.set('Access-Control-Allow-Origin','http://localhost:3000/')});
-        // catch the error, make specific functions for catching specific errors and you can chain through them with more catch operators
         return next.handle(authReq).pipe(catchError(x=> this.handleAuthError(x))); //here use an arrow function, otherwise you may get "Cannot read property 'navigate' of undefined" on angular 4.4.2/net core 2/webpack 2.70
     }
 }
