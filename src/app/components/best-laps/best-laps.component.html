@@ -1,42 +1,49 @@
-<div class="app-div">
-  <div class="fifty">
-    <h2>Personnal best laps</h2>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 col-lg-6 col-xl-6">
       <mat-list>
+        <mat-list-item class="list-title">
+          <div>Personnal best laps</div>
+        </mat-list-item>
+
         <mat-list-item *ngFor="let lap of this.personnalBestLaps;let i = index" [class.alt-line]="i%2 == 1">
           <div class="lap-line">
             <div class="thirty">
               {{ lap.name }}, {{ lap.country }}
             </div>
-            <div class="thirty">
-            <img src="assets/flags/{{lap.user_country}}.png" class="flag" />
-            {{ lap.nickname }}
+            <div class="thirty cell-middle">
+              <img src="assets/flags/{{lap.user_country}}.png" class="flag" />
+              {{ lap.nickname }}
             </div>
-            <div class="thirty">
-              {{ lap.time }}
+            <div class="thirty cell-right">
+              <span>{{ lap.time }}</span>
             </div>
           </div>
           <mat-divider></mat-divider>
         </mat-list-item>
-        </mat-list>
-      </div>
-      <div class="fifty">
-        <h2>Best laps</h2>
-        <mat-list>
-          <mat-list-item *ngFor="let lap of this.bestLaps;let i = index" [class.alt-line]="i%2 == 1">
-            <div class="lap-line">
-              <div class="thirty">
-                {{ lap.name }}, {{ lap.country }}
-              </div>
-              <div class="thirty">
-                <img src="assets/flags/{{lap.user_country}}.png" class="flag" />
-                {{ lap.nickname }}
-              </div>
-              <div class="thirty">
-                {{ lap.time }}
-              </div>
+      </mat-list>
+    </div>
+    <div class="col-md-12 col-lg-6 col-xl-6">
+      <mat-list>
+        <mat-list-item class="list-title">
+          <div>Best laps</div>
+        </mat-list-item>
+        <mat-list-item *ngFor="let lap of this.bestLaps;let i = index" [class.alt-line]="i%2 == 1">
+          <div class="lap-line">
+            <div class="thirty">
+              {{ lap.name }}, {{ lap.country }}
             </div>
-            <mat-divider></mat-divider>
-          </mat-list-item>
-          </mat-list>
-        </div>
+            <div class="thirty cell-middle">
+              <img src="assets/flags/{{lap.user_country}}.png" class="flag" />
+              {{ lap.nickname }}
+            </div>
+            <div class="thirty cell-right">
+              <span>{{ lap.time }}</span>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
 </div>

@@ -1,28 +1,35 @@
 <div class="app-div">
   <mat-card *ngFor="let race of races">
-    <mat-card-title>
-      {{ race.position == 1 ? race.position+'er' : race.position+'ème' }} - {{ race.name }}, {{
-      race.country }}
-    </mat-card-title>
-    <mat-card-subtitle>
-      Circuit rallycross : {{ race.length | number }} m - ({{ race.asphalt }}% asphalt et {{ race.gravel }}% gravel)
-    </mat-card-subtitle>
     <mat-card-content>
-      <div class="race-info">
-        <div class="race-info-picto"><mat-icon aria-hidden="false" aria-label="Example home icon">timer</mat-icon></div>
-        <div>{{ race.time }}</div>
-      </div>
-      <div class="race-info">
-        <div class="race-info-picto"><mat-icon aria-hidden="false" aria-label="Example home icon">date_range</mat-icon></div>
-        <div>{{ race.created_at | date:'d/MM/y HH:mm' }}</div>
-      </div>
       <mat-list>
+        <mat-list-item class="list-title">
+          <div class="lap-line">
+            <div class="twenty">
+              <div class="race-info">
+                <div class="race-info-picto"><mat-icon aria-hidden="false" aria-label="Example home icon">date_range</mat-icon></div>
+                <div>{{ race.created_at | date:'d/MM/y HH:mm' }}</div>
+              </div>
+            </div>
+            <div class="sixty cell-middle">
+              <div class="list-title-content">
+                <div class="title">{{ race.position == 1 ? race.position+'er' : race.position+'ème' }} - {{ race.name }}, {{race.country }}</div>
+                <div class="sub-title">Circuit rallycross : {{ race.length | number }} m - ({{ race.asphalt }}% asphalt et {{ race.gravel }}% gravel)</div>
+              </div>
+            </div>
+            <div class="twenty cell-right">
+              <div class="race-info">
+                <div>{{ race.time }}</div>
+                <div class="race-info-picto"><mat-icon aria-hidden="false" aria-label="Example home icon">timer</mat-icon></div>
+              </div>
+            </div>
+          </div>
+        </mat-list-item>
         <mat-list-item *ngFor="let lap of race.laps;let i = index" [class.alt-line]="i%2 == 1">
           <div class="lap-line">
-            <div class="lap-number">
+            <div class="fifty">
               Tour {{ lap.lap +1 }}
             </div>
-            <div class="lap-time">
+            <div class="fifty lap-time">
               {{ lap.time | number }}
             </div>
           </div>

@@ -34,3 +34,21 @@
 .flag {
   margin-right: 5px;
 }
+
+.list-title {
+  width: 100%;
+  background-color: #393939;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+}
+
+.cell-middle {
+  display: flex;
+  justify-content: center;
+}
+
+.cell-right {
+  display: flex;
+  justify-content: flex-end;
+}
