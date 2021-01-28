@@ -12,8 +12,8 @@
             </div>
             <div class="sixty cell-middle">
               <div class="list-title-content">
-                <div class="title">{{ race.position == 1 ? race.position+'er' : race.position+'ème' }} - {{ race.name }}, {{race.country }}</div>
-                <div class="sub-title">Circuit rallycross : {{ race.length | number }} m - ({{ race.asphalt }}% asphalt et {{ race.gravel }}% gravel)</div>
+                <div class="title">{{ race.position == 1 ? race.position+'er' : race.position+'ème' }} <img src="assets/flags/{{ race.country }}.png" class="flag" />{{ race.name }}</div>
+                <div class="sub-title">{{ race.length | number }} m ({{ race.asphalt }}% asphalt et {{ race.gravel }}% gravel)</div>
               </div>
             </div>
             <div class="twenty cell-right">
