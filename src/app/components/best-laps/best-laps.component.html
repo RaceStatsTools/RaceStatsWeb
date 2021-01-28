@@ -5,11 +5,10 @@
         <mat-list-item class="list-title">
           <div>Personnal best laps</div>
         </mat-list-item>
-
         <mat-list-item *ngFor="let lap of this.personnalBestLaps;let i = index" [class.alt-line]="i%2 == 1">
           <div class="lap-line">
             <div class="thirty">
-              {{ lap.name }}, {{ lap.country }}
+              <img src="assets/flags/{{ lap.country }}.png" class="flag" />{{ lap.name }}
             </div>
             <div class="thirty cell-middle">
               <img src="assets/flags/{{lap.user_country}}.png" class="flag" />
@@ -31,7 +30,7 @@
         <mat-list-item *ngFor="let lap of this.bestLaps;let i = index" [class.alt-line]="i%2 == 1">
           <div class="lap-line">
             <div class="thirty">
-              {{ lap.name }}, {{ lap.country }}
+              <img src="assets/flags/{{ lap.country }}.png" class="flag" />{{ lap.name }}
             </div>
             <div class="thirty cell-middle">
               <img src="assets/flags/{{lap.user_country}}.png" class="flag" />
