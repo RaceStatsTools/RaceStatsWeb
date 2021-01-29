@@ -5,6 +5,7 @@
             </mat-tab>
             <mat-tab *ngFor="let track of tracks" [label]="track.name">
                 <ng-template matTabContent>
+                    <app-track-best-laps [trackId]="track.id"></app-track-best-laps>
                     <app-races [trackId]="track.id"></app-races>
                 </ng-template>
             </mat-tab>

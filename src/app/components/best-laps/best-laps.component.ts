@@ -29,12 +29,12 @@ export class BestLapsComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.apiService.listBestLasps(0)
+    this.apiService.listBestLaps(0)
     .subscribe(bestLaps => {
       this.bestLaps = bestLaps;
     });
 
-    this.apiService.listBestLasps(this.storeService.getUser().id)
+    this.apiService.listBestLaps(this.storeService.getUser().id)
     .subscribe(personnalBestlaps => {
       this.personnalBestLaps = personnalBestlaps;
     });

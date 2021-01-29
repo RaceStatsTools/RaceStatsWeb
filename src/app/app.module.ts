@@ -15,7 +15,9 @@ import { ApiService } from './services/api.service';
 import { TracksComponent } from './components/tracks/tracks.component';
 import { RacesComponent } from './components/races/races.component';
 import { BestLapsComponent } from './components/best-laps/best-laps.component';
+import { TrackBestLapsComponent } from './components/track-best-laps/track-best-laps.component';
 import { RegisterComponent } from './components/register/register.component';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { RegisterComponent } from './components/register/register.component';
     TracksComponent,
     RacesComponent,
     BestLapsComponent,
+    TrackBestLapsComponent,
     RegisterComponent,
   ],
   imports: [
@@ -34,7 +37,10 @@ import { RegisterComponent } from './components/register/register.component';
     ReactiveFormsModule,
     MaterialModule,
     HttpClientModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts')
+    })
   ],
   providers: [
     {

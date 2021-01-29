@@ -3,6 +3,8 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
+import * as echarts from 'echarts';
+import 'src/app/echarts/theme/racestats.js'
 
 if (environment.production) {
   enableProdMode();
