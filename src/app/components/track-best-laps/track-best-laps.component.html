@@ -11,6 +11,7 @@
                           <div>Lap time history</div>
                         </mat-list-item>
                     </mat-list>
+                    <br />
                     <div echarts id="bestLapsHistory" [theme]="theme" [options]="options" [loading]="isLoading"
                         (chartInit)="onChartInit($event)"></div>
                 </div>
