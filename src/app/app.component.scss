@@ -9,3 +9,46 @@
 .top-toolbar {
   background-color: #393939;
 }
+
+.toolbar-inside {
+  display: flex;
+  flex-direction: rows;
+  width: 100%;
+}
+
+.toolbar-logo {
+  display: flex;
+  flex-grow: 10;
+  align-items: center;
+}
+
+.toolbar-button {
+  display: flex;
+  align-items: center;
+}
+
+.menu-button {
+  color: #f0f0f0;
+}
+
+.menu-text {
+  flex-grow: 10;
+}
+
+.menu-right {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.mat-icon {
+  margin-right: 5px;
+}
+
+.menu-link {
+  display: flex;
+}
+
+.menu-link-icon {
+  display: flex;
+}
