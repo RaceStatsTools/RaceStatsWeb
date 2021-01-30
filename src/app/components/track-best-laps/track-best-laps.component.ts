@@ -26,7 +26,6 @@ export class TrackBestLapsComponent implements OnInit {
   options = {
     darkMode: true,
     title: {
-      text: "Lap times history",
       subtext: "(30 days)"
     },
     tooltip: {

@@ -1,0 +1,31 @@
+<mat-list>
+  <mat-list-item class="list-title">
+    <div>Track best laps</div>
+  </mat-list-item>
+  <mat-list-item *ngFor="let rank of this.rankings;let i = index" [class.alt-line]="i%2 == 1">
+    <div class="lap-line">
+      <div class="ten">
+        {{ i + 1}}
+      </div>
+      <div class="twenty cell-middle">
+        <img src="assets/flags/{{ rank.country }}.png" class="flag" />
+      </div>
+      <div class="thirty">
+        {{ rank.nickname }}
+      </div>
+      <div class="fifty cell-right">
+        <span *ngIf="i>0">
+          <img *ngIf="i==1" src="assets/icons/trophy-silver.svg" class="trophy">
+          <img *ngIf="i==2" src="assets/icons/trophy-bronze.svg" class="trophy">
+          {{ rank.time | number:'1.3-3'}}
+        </span>
+        <span *ngIf="i==0"><img src="assets/icons/trophy-gold.svg" class="trophy">
+          <span class="best-lap">{{ rank.time | number:'1.3-3'}}</span>
+        </span>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-list>
+<mat-paginator [length]="50" [hidePageSize]="true" >
+</mat-paginator>

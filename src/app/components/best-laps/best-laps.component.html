@@ -15,7 +15,7 @@
             </div>
             <div class="thirty cell-right">
               <span *ngIf="lap.time > lap.best_time">{{ lap.time | number:'1.3-3'}}<br /><span class="diff" >+{{ lap.time - lap.best_time | number:'1.3-4' }}</span></span>
-              <span *ngIf="lap.time <= lap.best_time"><img src="assets/icons/trophy.svg" class="trophy"><span class="best-lap">{{ lap.time | number:'1.3-3'}}</span></span>
+              <span *ngIf="lap.time <= lap.best_time"><img src="assets/icons/trophy-gold.svg" class="trophy"><span class="best-lap">{{ lap.time | number:'1.3-3'}}</span></span>
             </div>
           </div>
           <mat-divider></mat-divider>

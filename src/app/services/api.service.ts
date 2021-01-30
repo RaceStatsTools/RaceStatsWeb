@@ -13,6 +13,7 @@ const tracksUrl = '/api/stats/tracks/';
 const racesByLengthUrl = '/api/stats/tracks/:id/races';
 const bestLapsUrl = '/api/stats/laps/best/:id';
 const bestLapsHistoryUrl = '/api/stats/tracks/:trackId/best-laps-history/:userId';
+const trackRankingUrl = '/api/stats/tracks/:trackId/rankings';
 
 @Injectable({
   providedIn: 'root'
@@ -71,6 +72,12 @@ export class ApiService {
 
   listTracks() : Observable<any> {
     return this.http.get<any>(tracksUrl).pipe(
+      catchError(this.handleError));
+  }
+
+  trackRankings(id) : Observable<any> {
+    let url = trackRankingUrl.replace(':trackId', id);
+    return this.http.get<any>(url).pipe(
       catchError(this.handleError));
   }
 

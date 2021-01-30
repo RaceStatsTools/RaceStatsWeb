@@ -1,5 +1,20 @@
 <mat-card>
     <mat-card-content>
-        <div echarts id="bestLapsHistory" [theme]="theme" [options]="options" [loading]="isLoading" (chartInit)="onChartInit($event)" ></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-lg-6 col-xl-6">
+                    <app-track-ranking [trackId]="trackId"></app-track-ranking>
+                </div>
+                <div class="col-md-12 col-lg-6 col-xl-6">
+                    <mat-list>
+                        <mat-list-item class="list-title">
+                          <div>Lap time history</div>
+                        </mat-list-item>
+                    </mat-list>
+                    <div echarts id="bestLapsHistory" [theme]="theme" [options]="options" [loading]="isLoading"
+                        (chartInit)="onChartInit($event)"></div>
+                </div>
+            </div>
+        </div>
     </mat-card-content>
 </mat-card>
