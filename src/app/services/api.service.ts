@@ -6,6 +6,7 @@ import { StoreService } from './store.service';
 
 const meUrl = '/api/users/me';
 const registerUrl = '/api/users/';
+const userUrl = '/api/users/nickname/:nickname';
 const loginUrl = '/api/auth/';
 const lapUrl = '/api/stats/laps/';
 const raceUrl = '/api/stats/races/';
@@ -56,6 +57,12 @@ export class ApiService {
   me(): Observable<any> {
     console.log(this.storeService.getToken())
     return this.http.get<any>(meUrl).pipe(
+      catchError(this.handleError));
+  }
+
+  getUserInfoByNickname(nickname: string) {
+    let url = userUrl.replace(':nickname', nickname);
+    return this.http.get<any>(url).pipe(
       catchError(this.handleError));
   }
   
