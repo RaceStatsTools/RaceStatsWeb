@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file target-language="fr-FR" source-language="en-US" datatype="plaintext" original="ng2.template">
+    <header>
+      <phase-group>
+        <phase contact-name="gotle" date="2021-02-02" tool-id="lokalize-20.12.1" phase-name="approval-1" process-name="approval" contact-email=""/>
+      </phase-group>
+      <tool tool-name="Lokalize" tool-version="20.12.1" tool-id="lokalize-20.12.1"/>
+    </header>
+    <body>
+      <trans-unit approved="yes" id="b09465f22c2fabad9c54faa3fb269d27667dbe86" datatype="html">
+        <source>Dashboard</source>
+        <target state="signed-off" phase-name="approval-1"></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note from="description" priority="1"> Dashboard</note>
+        <note from="meaning" priority="1">Menu </note>
+      </trans-unit>
+      <trans-unit id="ea6947a0bf60c1c6edfaa519053b9b9f348f220a" datatype="html">
+        <source>Track ranking</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note from="description" priority="1"> Ranking</note>
+        <note from="meaning" priority="1">Menu </note>
+      </trans-unit>
+      <trans-unit id="74ff70f80eefcfd01488a51a27d6bc12fb0f33ec" datatype="html">
+        <source>Login</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/login/login.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note from="description" priority="1"> Component title</note>
+        <note from="meaning" priority="1">Login </note>
+      </trans-unit>
+      <trans-unit id="3b088623d48a9708606814d40f8689e8d20ef9bc" datatype="html">
+        <source>Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/login/login.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note from="description" priority="1"> Email field</note>
+        <note from="meaning" priority="1">Login </note>
+      </trans-unit>
+      <trans-unit id="6f58ce9129c9e6c78513c2687720c6b1075966bd" datatype="html">
+        <source>Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/login/login.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note from="description" priority="1"> Password field</note>
+        <note from="meaning" priority="1">Login </note>
+      </trans-unit>
+      <trans-unit id="ed8aa9d0b35394ea08a5416fc8648fe1990f0041" datatype="html">
+        <source>Connect</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/login/login.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note from="description" priority="1"> Connect button</note>
+        <note from="meaning" priority="1">Login </note>
+      </trans-unit>
+      <trans-unit id="270c2f500bdb185109de340facefcabec126300b" datatype="html">
+        <source>Disconnect</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/login/login.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <note from="description" priority="1"> Disconnect button</note>
+        <note from="meaning" priority="1">Login </note>
+      </trans-unit>
+      <trans-unit id="aff0a596a6d7eb421f8aef1f8c2ce33c09b99061" datatype="html">
+        <source>asphalt</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/races/races.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note from="description" priority="1"> Asphalt</note>
+        <note from="meaning" priority="1">Races </note>
+      </trans-unit>
+      <trans-unit id="b3156285ef62147291c420d12a19a60d2b632e49" datatype="html">
+        <source>gravel</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/races/races.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note from="description" priority="1"> Asphalt</note>
+        <note from="meaning" priority="1">Races </note>
+      </trans-unit>
+      <trans-unit id="d7329b33f19f2d0da6f74c1b0efc029cf57fd776" datatype="html">
+        <source>Lap</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/races/races.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <note from="description" priority="1"> Lap</note>
+        <note from="meaning" priority="1">Races </note>
+      </trans-unit>
+      <trans-unit id="526a1a4e7f0eabdd16823ce33e9b333131faf0d7" datatype="html">
+        <source>My best laps</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/best-laps/best-laps.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note from="description" priority="1"> Title</note>
+        <note from="meaning" priority="1">My best laps </note>
+      </trans-unit>
+      <trans-unit id="ae283cd29c648c1f81c5653dceec3f246ccdbee2" datatype="html">
+        <source>Tracks records</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/best-laps/best-laps.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <note from="description" priority="1"> Tracks records</note>
+        <note from="meaning" priority="1">My best laps </note>
+      </trans-unit>
+      <trans-unit id="f3d8d9b335b62c1cc5f39d75f45b0c04eee2724a" datatype="html">
+        <source>Register</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/register/register.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/register/register.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <note from="description" priority="1"> Component title</note>
+        <note from="meaning" priority="1">Register </note>
+      </trans-unit>
+      <trans-unit id="9e4bb3e2e68d46590f07c101dbbd83ed6b7f0eac" datatype="html">
+        <source>Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/register/register.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note from="description" priority="1"> Email field</note>
+        <note from="meaning" priority="1">Register </note>
+      </trans-unit>
+      <trans-unit id="dc9690e6af7b8e2905b42172c06e0d04d3a6daae" datatype="html">
+        <source>Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/register/register.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note from="description" priority="1"> Password field</note>
+        <note from="meaning" priority="1">Register </note>
+      </trans-unit>
+      <trans-unit id="a49cf496bda3d9baaa0b4e5ab5194a79cf0029f8" datatype="html">
+        <source>Nickname</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/register/register.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note from="description" priority="1"> Nickname field</note>
+        <note from="meaning" priority="1">Register </note>
+      </trans-unit>
+      <trans-unit id="a7462693d654cbe24cd8dfcdc47591a2936c038c" datatype="html">
+        <source>Choose you country</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/register/register.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <note from="description" priority="1"> Choose country field</note>
+        <note from="meaning" priority="1">Register </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

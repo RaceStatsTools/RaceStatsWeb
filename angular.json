@@ -13,6 +13,11 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "locales": {
+          "fr": "messages.fr.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -61,6 +66,9 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "fr": {
+              "localize": ["fr"]
             }
           }
         },
@@ -74,6 +82,9 @@
             "production": {
               "browserTarget": "RaceStatsWeb:build:production",
               "proxyConfig": "./proxy.conf.json"
+            },
+            "fr": {
+              "browserTarget": "RaceStatsWeb:build:fr"
             }
           }
         },

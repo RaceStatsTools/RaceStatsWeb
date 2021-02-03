@@ -18,7 +18,12 @@ body {
 }
 
 .alt-line {
-  background-color: rgb(130 130 130 / 20%)
+  background-color: rgb(130 130 130 / 20%);
+  display: block;
+}
+
+.alt-col {
+  background-color: rgba(130, 130, 130, 0.2);
 }
 
 .last-line {

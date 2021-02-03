@@ -2,26 +2,26 @@
     <form (ngSubmit)="register()" [formGroup]="form">
         <mat-card class="mt-10" *ngIf="!this.storeService.getUser()">
             <mat-card-title>
-                Register
+              <span i18n="Register | Component title">Register</span>
             </mat-card-title>
             <mat-card-content>
                     <mat-form-field appearance="fill">
-                        <mat-label>Email</mat-label>
+                        <mat-label i18n="Register | Email field">Email</mat-label>
                         <input matInput type="email" formControlName="email">
                     </mat-form-field>
                     <br>
                     <mat-form-field appearance="fill">
-                        <mat-label>Password</mat-label>
+                        <mat-label i18n="Register | Password field">Password</mat-label>
                         <input matInput type="password" formControlName="password">
                     </mat-form-field>
                     <br>
                     <mat-form-field appearance="fill">
-                        <mat-label>Nickname</mat-label>
+                        <mat-label i18n="Register | Nickname field">Nickname</mat-label>
                         <input matInput type="text" formControlName="nickname">
                     </mat-form-field>
                     <br>
                     <mat-form-field appearance="fill">
-                    <mat-label>Choose you country</mat-label>
+                    <mat-label i18n="Register | Choose country field">Choose you country</mat-label>
                     <mat-select formControlName="country" required>
                         <mat-select-trigger>
                           <div style="display:flex; align-items: center;">
@@ -39,7 +39,7 @@
                     </mat-form-field>
             </mat-card-content>
             <mat-card-actions>
-                <button mat-raised-button color="primary" type="submit">Register</button>
+                <button mat-raised-button color="primary" type="submit" i18n="Register | Register button">Register</button>
             </mat-card-actions>
         </mat-card>
     </form>

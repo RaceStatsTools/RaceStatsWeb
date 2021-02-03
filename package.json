@@ -1,9 +1,12 @@
 {
   "name": "race-stats-web",
   "version": "0.0.0",
+  "browser": {
+    "fs": false
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --configuration=fr",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -32,6 +35,7 @@
     "@angular-devkit/build-angular": "~0.1100.6",
     "@angular/cli": "~11.0.6",
     "@angular/compiler-cli": "~11.0.6",
+    "@angular/localize": "^11.0.9",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",

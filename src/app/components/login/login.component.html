@@ -2,23 +2,23 @@
     <form (ngSubmit)="connect()" [formGroup]="form">
         <mat-card class="mt-10" *ngIf="!this.storeService.getUser()">
             <mat-card-title>
-                Login
+                <span i18n="Login | Component title">Login</span>
             </mat-card-title>
             <mat-card-content>
                     <mat-form-field appearance="fill">
-                        <mat-label>Email</mat-label>
+                        <mat-label i18n="Login | Email field">Email</mat-label>
                         <input matInput type="email" formControlName="email" value="">
                     </mat-form-field>
                     <br>
                     <mat-form-field appearance="fill">
-                        <mat-label>Password</mat-label>
+                        <mat-label i18n="Login | Password field">Password</mat-label>
                         <input matInput type="password" formControlName="password" value="">
                     </mat-form-field>
                     <br>
                 
             </mat-card-content>
             <mat-card-actions>
-                <button mat-raised-button color="primary" type="submit">Connect</button>
+                <button mat-raised-button color="primary" type="submit" i18n="Login | Connect button">Connect</button>
             </mat-card-actions>
         </mat-card>
     </form>
@@ -29,7 +29,7 @@
             <app-best-laps></app-best-laps>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-raised-button color="primary" (click)="disconnect()">Disconnect</button>
+            <button mat-raised-button color="primary" (click)="disconnect()" i18n="Login | Disconnect button">Disconnect</button>
         </mat-card-actions>
     </mat-card>
     <app-tracks></app-tracks>
