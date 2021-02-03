@@ -25,15 +25,10 @@ export class LoginComponent implements OnInit {
     }
 
   ngOnInit() {
-    /*this.apiService.me()
-      .subscribe(user => {
-        this.storeService.setUser(user);
-      });*/
+
   }
 
   me() {
-    console.log('me', this.storeService.getToken())
-    
     this.apiService.me()
       .subscribe(user => {
         this.storeService.setUser(user);
