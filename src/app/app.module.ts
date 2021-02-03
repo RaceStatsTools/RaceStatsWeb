@@ -19,6 +19,7 @@ import { TrackBestLapsComponent } from './components/track-best-laps/track-best-
 import { RegisterComponent } from './components/register/register.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { TrackRankingComponent } from './components/track-ranking/track-ranking.component';
+import { EventComponent } from './components/event/event.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { TrackRankingComponent } from './components/track-ranking/track-ranking.
     TrackBestLapsComponent,
     RegisterComponent,
     TrackRankingComponent,
+    EventComponent
   ],
   imports: [
     BrowserModule,

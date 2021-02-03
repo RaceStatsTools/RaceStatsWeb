@@ -1,0 +1,133 @@
+<div class="app-div">
+    <div *ngIf="this.storeService.getUser() && event?.stages">
+        <mat-list>
+            <mat-list-item class="list-title">
+                <div class="title">RX Sim night #1 -&nbsp;</div>
+                <div class="subtitle"> {{ event.start | date:'y/MM/d HH:mm'}} - {{ event.end | date:'y/MM/d HH:mm'}}
+                </div>
+            </mat-list-item>
+        </mat-list>
+        <mat-card>
+            <div class="round-line pilot-ranking">
+                <div class="percent11">
+                    &nbsp;
+                </div>
+                <div *ngFor="let pilot of event.users;let i = index;" class="percent11 cell-centered"
+                    [class.alt-line]="i%2 == 1">
+                    <div class="pilot">
+                        <div class="pilot-rank">
+                            <div *ngIf="i==0" class="trophy-gold">
+                                {{ i + 1 }}
+                            </div>
+                            <div *ngIf="i==1" class="trophy-silver">
+                                {{ i + 1 }}
+                            </div>
+                            <div *ngIf="i==2" class="trophy-bronze">
+                                {{ i + 1 }}
+                            </div>
+                            <div *ngIf="i>2" class="medal">{{ i + 1 }}</div>
+                        </div>
+                        <div class="pilot-name">
+                            {{ pilot.nickname }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngFor="let stage of event.stages;let i = index">
+                <div class="round-line">
+                    <div class="percent11" style="overflow:hidden">
+                        <div class="track">
+                            <div class="track-title">
+                                <img src="assets/flags/{{ stage.country }}.png" class="flag" />{{ stage.track }}
+                            </div>
+                            <div class="track-subtitle">
+                                {{ stage.length | number:'1.0-0' }}m
+                            </div>
+                            <div class="track-subtitle">
+                                ({{ stage.asphalt }}% asphalt / {{ stage.gravel }}% gravel)
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngFor="let pilot of event.users;let i = index;" class="percent11 cell-centered"
+                        [class.alt-line]="i%2 == 1">
+                        <div *ngFor="let score of stage.points;let j = index;">
+                            <div *ngIf="pilot.nickname == score.nickname">
+                                {{ score.points }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <mat-divider></mat-divider>
+            </div>
+            <div class="round-line">
+                <div class="percent11">
+                    <div class="pilot-score">
+                        <div class="pilot-score-header">
+                            <span i18n="Event | Total"><b>Total</b></span>
+                        </div>
+                    </div>
+                </div>
+                <div *ngFor="let pilot of event.users;let i = index;" class="percent11 cell-centered"
+                    [class.alt-line]="i%2 == 1">
+                    <div class="pilot">
+                        <div class="pilot-name">
+                            <b>{{ pilot.points }}</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+        <mat-accordion>
+            <mat-expansion-panel *ngFor="let stage of event.stages;let i = index">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <img src="assets/flags/{{ stage.country }}.png" class="flag" />{{ stage.track }} - {{ stage.created_at | date:'HH:mm'}}
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <div *ngFor="let round of stage.rounds">
+                    <mat-list>
+                        <mat-list-item class="list-title">
+                            Round {{ round.number +1 }}
+                        </mat-list-item>
+                    </mat-list>
+                    <mat-list-item class="list-header">
+                        <div class="round-line">
+                            <div class="round-rank">
+                                &nbsp;
+                            </div>
+                            <div class="round-pilot">
+                                <b>Pilot</b>
+                            </div>
+                            <div class="round-time">
+                                <b>Total</b>
+                            </div>
+                            <div *ngFor="let num of [].constructor(6);let k = index" class="round-lap">
+                                <b>Lap {{ k + 1 }}</b>
+                            </div>
+                        </div>
+                        <mat-divider></mat-divider>
+                    </mat-list-item>
+                    <mat-list-item *ngFor="let pilot of round.pilots;let j = index" [class.alt-line]="j%2 == 1">
+                        <div class="round-line">
+                            <div class="round-rank">
+                                <span>{{ j + 1 }}</span>
+                            </div>
+                            <div class="round-pilot">
+                                {{ pilot.pilot }}
+                            </div>
+                            <div class="round-time">
+                                {{ pilot.formated_time }}<br />
+                                <div *ngIf="pilot.penalty != 0">+{{ pilot.penalty }}</div>
+                            </div>
+                            <div *ngFor="let lap of pilot.laps" class="round-lap">
+                                {{ lap.time }}
+                            </div>
+                        </div>
+                        <mat-divider></mat-divider>
+                    </mat-list-item>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+</div>
