@@ -1,0 +1,121 @@
+<div class="app-div" *ngIf="user">
+    <mat-card>
+        <mat-card-content>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 col-lg-6 col-xl-6">
+                        <mat-list>
+                            <mat-list-item class="list-title">
+                                <div><img src="assets/flags/{{ user.country }}.png" class="flag" />{{ user.nickname }}
+                                </div>
+                            </mat-list-item>
+                        </mat-list>
+                        <div class="row mt-14">
+                            <div class="col-6">
+                                <div class="user-level">
+                                    <div class="level-circle">
+                                        <mat-progress-spinner diameter="121" mode="determinate" [value]="user.race_count / 10" color="accent">
+                                        </mat-progress-spinner>
+                                    </div>
+                                    <div class="level-label" i18n="User | Level label">
+                                        level
+                                    </div>
+                                    <div class="level-value">
+                                        {{ user.race_count/ 10 | number:'1.0-0' }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="grade">
+                                    <div class="svg-medal">
+                                        <div class="grade-value">{{ getGrade(user.victory_count/user.race_count) }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <mat-list>
+                            <mat-list-item class="alt-line">
+                                <div class="track-line">
+                                    <div class="cell-50p">
+                                        <span i18n="User | Total laps">Total laps</span>
+                                    </div>
+                                    <div class="cell-50p text-right">
+                                        {{ user.lap_count }} 
+                                    </div>
+                                </div>
+                                <mat-divider></mat-divider>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <div class="track-line">
+                                    <div class="cell-50p">
+                                        <span i18n="User | Total races">Total races</span>
+                                    </div>
+                                    <div class="cell-50p text-right">
+                                        {{ user.race_count }} 
+                                    </div>
+                                </div>
+                                <mat-divider></mat-divider>
+                            </mat-list-item>
+                            <mat-list-item class="alt-line">
+                                <div class="track-line">
+                                    <div class="cell-50p">
+                                        <span i18n="User | Victories">Victories</span>
+                                    </div>
+                                    <div class="cell-50p text-right">
+                                        {{ user.victory_count }} 
+                                    </div>
+                                </div>
+                                <mat-divider></mat-divider>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <div class="track-line">
+                                    <div class="cell-50p">
+                                        <span i18n="User | Podiums">Podiums</span>
+                                    </div>
+                                    <div class="cell-50p text-right">
+                                        {{ user.podium_count }} 
+                                    </div>
+                                </div>
+                                <mat-divider></mat-divider>
+                            </mat-list-item>
+                            <mat-list-item class="alt-line">
+                                <div class="track-line">
+                                    <div class="cell-50p">
+                                        <span i18n="User | Race time">Race time</span>
+                                    </div>
+                                    <div class="cell-50p text-right">
+                                        {{ user.race_time / 3600 | number:'1.0-0' }} h
+                                    </div>
+                                </div>
+                                <mat-divider></mat-divider>
+                            </mat-list-item>
+                        </mat-list>
+                    </div>
+                    <div class="col-md-12 col-lg-6 col-xl-6">
+                        <mat-list>
+                            <mat-list-item class="list-title">
+                                <div><span i18n="User | Favorite tracks">Favorite tracks</span></div>
+                            </mat-list-item>
+                            <mat-list-item *ngFor="let track of user.tracks;let i = index" [class.alt-line]="i%2 == 1">
+                                <div class="track-line">
+                                    <div class="cell-50p">
+                                        <img src="assets/flags/{{ track.country }}.png" class="flag" />{{ track.name }}
+                                    </div>
+                                    <div class="cell-25p">
+                                        <span *ngIf="track.time > track.best_time">{{ track.time | number:'1.3-3'}}<br /><span class="diff" >+{{ track.time - track.best_time | number:'1.3-4' }}</span></span>
+                                        <span *ngIf="track.time <= track.best_time"><img src="assets/icons/trophy-gold.svg" class="trophy"><span class="best-lap">{{ track.time | number:'1.3-3'}}</span></span>
+                                    </div>
+                                    <div class="cell-25p text-right">
+                                        {{ track.count / user.race_count * 100 | number:'1.0-1' }} %
+                                    </div>
+                                </div>
+                                <mat-divider></mat-divider>
+                            </mat-list-item>
+                        </mat-list>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <app-tracks [userId]="user.id"></app-tracks>
+</div>

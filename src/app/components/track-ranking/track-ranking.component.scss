@@ -4,8 +4,22 @@
     width: 100%;
   }
 
+  a {
+    color: #ffffff;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+
+  tr.mat-row:hover {
+    background: #b1b1b169;
+  }
+
 .fifty {
   width: 50%;
+}
+
+.forty {
+  width: 40%;
 }
 
 .ten {
@@ -26,8 +40,17 @@
   margin-bottom: 18px;
 }
 
+.mat-table {
+  width: 100%;
+}
+
 .mat-list {
 
+}
+
+.rank {
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .lap-line {
@@ -79,6 +102,7 @@
 .cell-right {
   display: flex;
   justify-content: flex-end;
+  padding-right:5px;
 }
 
 .mat-paginator {

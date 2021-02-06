@@ -1,31 +1,52 @@
 <mat-list>
   <mat-list-item class="list-title">
     <div>Track best laps</div>
-  </mat-list-item>
-  <mat-list-item *ngFor="let rank of this.rankings;let i = index" [class.alt-line]="i%2 == 1">
-    <div class="lap-line">
-      <div class="ten">
-        {{ i + 1}}
-      </div>
-      <div class="twenty cell-middle">
-        <img src="assets/flags/{{ rank.country }}.png" class="flag" />
-      </div>
-      <div class="thirty">
-        {{ rank.nickname }}
-      </div>
-      <div class="fifty cell-right">
-        <span *ngIf="i>0">
-          <img *ngIf="i==1" src="assets/icons/trophy-silver.svg" class="trophy">
-          <img *ngIf="i==2" src="assets/icons/trophy-bronze.svg" class="trophy">
-          {{ rank.time | number:'1.3-3'}}
-        </span>
-        <span *ngIf="i==0"><img src="assets/icons/trophy-gold.svg" class="trophy">
-          <span class="best-lap">{{ rank.time | number:'1.3-3'}}</span>
-        </span>
-      </div>
-    </div>
     <mat-divider></mat-divider>
   </mat-list-item>
 </mat-list>
-<mat-paginator [length]="8" [hidePageSize]="true" >
+
+<table mat-table [dataSource]="dataSource" matSort matSortActive="updated_at"
+        matSortDirection="desc" matSortDisableClear #dataContainer>
+        <ng-container matColumnDef="rank">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>rank</th>
+          <td mat-cell *matCellDef="let element;">
+            <span class="rank">{{ element.rank }}</span>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="country">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Country</th>
+          <td mat-cell *matCellDef="let element">
+            <img src="assets/flags/{{ element.country }}.png" class="flag" />
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="nickname">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Pilot</th>
+          <td mat-cell *matCellDef="let element">
+              {{ element.nickname }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="time">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>time</th>
+          <td mat-cell *matCellDef="let element">
+              <img *ngIf="element.rank==1" src="assets/icons/trophy-gold.svg" class="trophy">
+              <img *ngIf="element.rank==2" src="assets/icons/trophy-silver.svg" class="trophy">
+              <img *ngIf="element.rank==3" src="assets/icons/trophy-bronze.svg" class="trophy">
+              {{ element.time | number:'1.3-3'}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="link">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+          <td mat-cell *matCellDef="let element">
+            <mat-icon>loupe</mat-icon>
+          </td>
+        </ng-container>
+
+        <tr mat-row *matRowDef="let element; columns: displayedColumns;" [routerLink]="[element.id]" class="rank-row" [routerLink]="'/users/' + element.nickname.toLowerCase()"></tr>
+      </table>
+
+<mat-paginator [length]="8" [hidePageSize]="true" (page)="onPageChanged($event)">
 </mat-paginator>

@@ -1,12 +1,12 @@
 
         <mat-tab-group>
             <mat-tab label="All">
-                <app-races trackId="0"></app-races>
+                <app-races trackId="0" [userId]="userId"></app-races>
             </mat-tab>
             <mat-tab *ngFor="let track of tracks" [label]="track.name">
                 <ng-template matTabContent>
-                    <app-track-best-laps [trackId]="track.id"></app-track-best-laps>
-                    <app-races [trackId]="track.id"></app-races>
+                    <app-track-best-laps [trackId]="track.id" [userId]="userId"></app-track-best-laps>
+                    <app-races [trackId]="track.id" [userId]="userId"></app-races>
                 </ng-template>
             </mat-tab>
           </mat-tab-group>

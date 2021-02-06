@@ -11,10 +11,10 @@ const loginUrl = '/api/auth/';
 const lapUrl = '/api/stats/laps/';
 const raceUrl = '/api/stats/races/';
 const tracksUrl = '/api/stats/tracks/';
-const racesByLengthUrl = '/api/stats/tracks/:id/races';
+const racesByLengthUrl = '/api/stats/tracks/:id/users/:userId/races';
 const bestLapsUrl = '/api/stats/laps/best/:id';
 const bestLapsHistoryUrl = '/api/stats/tracks/:trackId/best-laps-history/:userId';
-const trackRankingUrl = '/api/stats/tracks/:trackId/rankings';
+const trackRankingUrl = '/api/stats/tracks/:trackId/rankings?pageSize=:pageSize&pageIndex=:pageIndex';
 const eventUrl = '/api/stats/events/:id/races';
 
 @Injectable({
@@ -83,14 +83,14 @@ export class ApiService {
       catchError(this.handleError));
   }
 
-  trackRankings(id) : Observable<any> {
-    let url = trackRankingUrl.replace(':trackId', id);
+  trackRankings(id, pageSize, pageIndex) : Observable<any> {
+    let url = trackRankingUrl.replace(':trackId', id).replace(':pageSize', pageSize).replace(':pageIndex', pageIndex);
     return this.http.get<any>(url).pipe(
       catchError(this.handleError));
   }
 
-  listUserRacesByTrackId(id) : Observable<any> {
-    let url = racesByLengthUrl.replace(':id', id);
+  listUserRacesByTrackId(id, userId) : Observable<any> {
+    let url = racesByLengthUrl.replace(':id', id).replace(':userId', userId);
     return this.http.get<any>(url).pipe(
       catchError(this.handleError));
   }

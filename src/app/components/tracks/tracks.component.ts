@@ -1,4 +1,4 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit, NgZone, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
 import { StoreService } from 'src/app/services/store.service';
@@ -10,7 +10,8 @@ import { StoreService } from 'src/app/services/store.service';
 })
 export class TracksComponent implements OnInit {
   tracks:any[] = []
-  
+  @Input() userId: number;
+
   constructor(
     private apiService: ApiService,
     private ngZone: NgZone,

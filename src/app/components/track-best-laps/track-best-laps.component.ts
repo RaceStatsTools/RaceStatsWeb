@@ -1,4 +1,4 @@
-import { Component, OnInit, NgZone, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, NgZone, Input, ViewChild, ElementRef, OnChanges, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
 import { StoreService } from 'src/app/services/store.service';
@@ -9,8 +9,9 @@ import { max } from 'rxjs/operators';
   templateUrl: './track-best-laps.component.html',
   styleUrls: ['./track-best-laps.component.scss']
 })
-export class TrackBestLapsComponent implements OnInit {
+export class TrackBestLapsComponent implements OnInit, OnChanges {
   @Input() trackId: string = '';
+  @Input() userId ;
   @ViewChild('bestLapsHistory') bestLapsHistory: HTMLElement;
   theme: string ="racestats"
   echartsInstance: any;
@@ -127,17 +128,43 @@ export class TrackBestLapsComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+
   }
 
   ngAfterViewInit() {
-    
+
   }
 
   onChartInit(ec) {
     this.echartsInstance = ec;
     this.apiService
-      .listBestLapsHistory(this.trackId, 30, this.storeService.getUser().id)
+      .listBestLapsHistory(this.trackId, 30, this.userId)
+      .subscribe(history => {
+        this.history = history;
+        let minMax = this.getMinMaxTime(this.history)
+        this.options.yAxis[0].min = this.options.yAxis[0].min < this.minMax.min - 1 ? this.options.yAxis[0].min : this.minMax.min - 1;
+        this.options.yAxis[0].max = this.options.yAxis[0].max > this.minMax.max + 1 ? this.options.yAxis[0].max : this.minMax.max + 1;
+        this.options.series[1].data = this.history;
+        this.echartsInstance.setOption(this.options);
+
+      })
+
+    this.apiService
+      .listBestLapsHistory(this.trackId, 30, 0)
+      .subscribe(record => {
+        this.record = record;
+        this.getMinMaxTime(this.record)
+        this.options.yAxis[0].min = this.options.yAxis[0].min < this.minMax.min - 1 ? this.options.yAxis[0].min : this.minMax.min - 1;
+        this.options.yAxis[0].max = this.options.yAxis[0].max > this.minMax.max + 1 ? this.options.yAxis[0].max : this.minMax.max + 1;
+        this.options.series[0].data = this.record;
+        this.echartsInstance.setOption(this.options);
+
+      })
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    this.apiService
+      .listBestLapsHistory(this.trackId, 30, this.userId)
       .subscribe(history => {
         this.history = history;
         let minMax = this.getMinMaxTime(this.history)

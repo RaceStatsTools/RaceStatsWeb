@@ -1,0 +1,300 @@
+.app-div {
+    margin-left: 18px;
+    margin-right: 18px;
+    margin-top: 18px;
+  }
+
+  .mat-card {
+    margin-bottom: 18px;
+  }
+
+  .flag {
+    margin-right: 5px;
+  }
+
+  .mat-progress-bar {
+    height: 30px;
+  }
+
+::ng-deep .mat-progress-bar-buffer {
+    background-color: #393939;
+}
+
+::ng-deep .mat-progress-spinner circle {
+    fill: #393939 !important;
+}
+  
+  .mt-14 {
+    margin-top: 14px;
+  }
+
+  .mt-20 {
+    margin-top: 20px;
+  }
+
+  .grade {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .grade-value {
+    font-size: 40px;
+    font-weight: bold;
+    padding-top: 44px;
+    margin-left: 46px;
+    color: #967d3c;
+  }
+
+  .svg-medal {
+    width: 115px;
+    height: 115px;
+    background: url(../../../assets/icons/gold-medal.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  .user-reward {
+    display:flex;
+  }
+
+  .user-level {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .level-label {
+    font-size: 20px;
+    position: absolute;
+    text-align: center;
+    padding-bottom: 35px;
+  }
+
+  .level-value {
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    text-align: center;
+    padding-top: 15px;
+  }
+
+  .diff {
+    font-size: 10px;
+    color: #e9e22e;
+  }
+  
+  .best-lap {
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+  }
+  
+  .trophy {
+    margin-right: 5px;
+  }
+
+  .track-line {
+    display: flex;
+    width: 100%;
+    font-size: 14px;
+    align-items: center;
+  }
+
+  .cell-50p {
+    width: 50%;
+  }
+
+  .cell-40p {
+    width: 40%;
+  }
+
+  .cell-30p {
+    width: 30%;
+  }
+
+  .cell-25p {
+    width: 25%;
+  }
+
+
+  .list-header {
+    width: 100%;
+    display: block;
+    background-color: #e9e22e;
+    color: #393939;
+  }
+
+  .list-title {
+    width: 100%;
+    background-color: #393939;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .round-line {
+    display:flex;
+    width: 100%;
+    height: 48px;
+    align-items: center;
+  }
+
+  .pilot-ranking {
+    background-color: #393939;
+  }
+
+  .round-rank {
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #393939;
+    width: 5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pilot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  
+  .pilot-score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .pilot-score-title {
+
+  }
+
+  .pilot-name {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+
+  .pilot-rank {
+
+  }
+
+  .trophy-gold {
+    width: 24px;
+    height: 24px;
+    font-size: 13px;
+    background: url(../../../assets/icons/trophy-gold.svg);
+    background-size: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 500;
+  }
+  .trophy-silver {
+    width: 24px;
+    height: 24px;
+    font-size: 13px;
+    background: url(../../../assets/icons/trophy-silver.svg);
+    background-size: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 500;
+  }
+  .trophy-bronze {
+    width: 24px;
+    height: 24px;
+    font-size: 13px;
+    background: url(../../../assets/icons/trophy-bronze.svg);
+    background-size: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 500;
+  }
+
+  .medal {
+    width: 20px;
+    height: 20px;
+    font-size: 13px;
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    background-color: #8c8c8c;
+    color: #ffffff;
+    font-weight: 500;
+  }
+
+  .track {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  .track-subtitle {
+    color: #d1d1d1;
+    line-height: 11px;
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .percent5 {
+    width: 5%;
+    height: 100%;
+  }
+
+  .percent10 {
+    width: 10%;
+    height: 100%;
+  }
+
+  .percent11 {
+    width: 11%;
+    height: 100%;
+  }
+
+  .percent15 {
+    width: 15%;
+    height: 100%;
+  }
+
+  .percent20 {
+    width: 20%;
+    height: 100%;
+  }
+
+  .cell-centered {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .round-pilot {
+    width: 15%;
+  }
+
+  .round-time {
+    width: 14%;
+  }
+
+  .round-lap {
+    width: 11%;
+  }
+
+  .line {
+    //display: block;
+  }
+
+  .mat-expansion-panel:not([class*=mat-elevation-z]) {
+    background-color: #393939cc;
+}
