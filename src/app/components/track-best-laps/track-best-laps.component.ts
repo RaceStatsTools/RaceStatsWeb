@@ -39,7 +39,7 @@ export class TrackBestLapsComponent implements OnInit, OnChanges {
       }
     },
     legend: {
-      data: ['My best lap times', 'Track record']
+      data: ['Best lap times', 'Track record']
     },
     grid: {
       left: '3%',
@@ -106,7 +106,7 @@ export class TrackBestLapsComponent implements OnInit, OnChanges {
 
       },
       {
-        name: 'My best lap times',
+        name: 'Best lap times',
         type: 'line',
         stack: 'mytimes',
         connectNulls: true,
