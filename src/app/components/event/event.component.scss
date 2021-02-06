@@ -185,6 +185,13 @@
     width: 11%;
   }
 
+  .lap-value {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+  }
+
   .line {
     //display: block;
   }
