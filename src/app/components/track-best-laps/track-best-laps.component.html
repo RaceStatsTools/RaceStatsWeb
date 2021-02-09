@@ -6,7 +6,7 @@
                     <div class="track-banner banner-{{ track.id }}">
                         <div class="track-banner-text">
                             <div class="track-title">
-                                <img src="assets/flags/{{ track.country }}.png" class="flag" /> {{ track.name }}
+                                <img src="assets/flags/{{ track.country }}.png" class="flag" *ngIf="track.country"/> {{ track.name }}
                             </div>
                             <div class="track-info">
                                 {{ track.length | number:'1.0-0' }}m ({{ track.asphalt }}% <span

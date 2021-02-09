@@ -21,6 +21,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { TrackRankingComponent } from './components/track-ranking/track-ranking.component';
 import { EventComponent } from './components/event/event.component';
 import { UserComponent } from './components/user/user.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { UserComponent } from './components/user/user.component';
     RegisterComponent,
     TrackRankingComponent,
     EventComponent,
-    UserComponent
+    UserComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

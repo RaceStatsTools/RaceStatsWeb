@@ -1,59 +1,4 @@
 <div class="app-div">
-    <mat-card class="mt-10">
-        <mat-card-content class="home-intro">
-                <p>Race Stats is free and open source tools created to track your performance on RX sim. It currently supports Dirt Rally 2.0 (Rallycross mode).</p>
-                <p>Get all lap times history, compare with other pilots, create teams and competitons to race with your friends.</p>
-                <p>HOW DOES IT WORK ?</p>
-                <mat-list>
-                    <mat-list-item>
-                        <div class="bullet">
-                            <div class="bullet-number">1</div>
-                        </div>
-                        <div class="list-text">
-                            Create you personnal account
-                        </div>
-                    </mat-list-item>
-                    <mat-divider></mat-divider>
-                    <mat-list-item>
-                        <div class="bullet">
-                            <div class="bullet-number">2</div>
-                        </div>
-                        <div class="list-text">
-                            Install RaceStats Logger application
-                        </div>
-                    </mat-list-item>
-                    <mat-divider></mat-divider>
-                    <mat-list-item>
-                        <div class="bullet">
-                            <div class="bullet-number">3</div>
-                        </div>
-                        <div class="list-text">
-                            Activate UDP telemetry on Dirt Rally 2
-                        </div>
-                    </mat-list-item>
-                    <mat-divider></mat-divider>
-                    <mat-list-item>
-                        <div class="bullet">
-                            <div class="bullet-number">4</div>
-                        </div>
-                        <div class="list-text">
-                            Launch app when playing Dirt Rally 2.0 RX
-                        </div>
-                    </mat-list-item>
-                    <mat-divider></mat-divider>
-                  </mat-list>
-                  <br />
-                  <h4>That's it, Ready To Race !</h4>
-        </mat-card-content>
-    </mat-card>
-    <div class="row">
-        <div class="col-6 big-button">
-            <button mat-raised-button color="primary" type="submit" i18n="Login | Connect button">Connect</button>
-        </div>
-        <div class="col-6 big-button">
-            <button mat-raised-button color="primary" type="submit" i18n="Login | Connect button">Register</button>
-        </div>
-    </div>
     <form (ngSubmit)="connect()" [formGroup]="form">
         <mat-card class="mt-10" *ngIf="!this.storeService.getUser()">
             <mat-card-title>
@@ -81,7 +26,7 @@
     <div *ngIf="this.storeService.getUser()">
     <mat-card >
         <mat-card-content>
-            <app-best-laps></app-best-laps>
+            <!--<app-best-laps></app-best-laps>-->
         </mat-card-content>
         <mat-card-actions>
             <button mat-raised-button color="primary" (click)="disconnect()" i18n="Login | Disconnect button">Disconnect</button>

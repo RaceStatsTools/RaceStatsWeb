@@ -13,7 +13,7 @@ export class NavigationService {
     ) {
 
     }
-    public pageTitle = new BehaviorSubject<string>("RaceStats RallyCross");
+    public pageTitle = new BehaviorSubject<string>("RaceStats RX");
 
     setPageTitle(newTitle: string) {
         this.pageTitle.next(newTitle);
