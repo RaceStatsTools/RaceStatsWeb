@@ -4,6 +4,7 @@ import { ApiService } from 'src/app/services/api.service';
 import { StoreService } from 'src/app/services/store.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-user',
@@ -16,11 +17,14 @@ export class UserComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private route: ActivatedRoute,
+    private navigationService: NavigationService
     ) {
 
     }
 
   ngOnInit() {
+    this.navigationService.setPageTitle("Pilot");
+
     this.route.params.subscribe(params => {
       if (params['nickname']) {
         this.nickname = params['nickname'];

@@ -19,8 +19,15 @@
 
 .toolbar-logo {
   display: flex;
+  align-items: center;
+}
+
+.toolbar-title {
+  display: flex;
   flex-grow: 10;
   align-items: center;
+  justify-content: center;
+  color:#f0f0f0;
 }
 
 .toolbar-button {

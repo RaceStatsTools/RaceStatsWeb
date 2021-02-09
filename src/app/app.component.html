@@ -25,6 +25,7 @@
         <div class="toolbar-logo">
           <img src="assets/rsrx.png" />
         </div>
+        <div class="toolbar-title"><h1>{{ pageTitle }}</h1></div>
         <div class="toolbar-button">
           <button *ngIf="!drawer.opened"  mat-icon-button aria-label="Main menu" (click)="drawer.toggle()" class="menu-button" >
             <mat-icon>menu</mat-icon>
