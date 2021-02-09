@@ -14,7 +14,7 @@ export class AppComponent {
   pageTitle: string;
   constructor(
     private router: Router,
-    private navigationService: NavigationService,
+    public navigationService: NavigationService,
     private changeRef: ChangeDetectorRef) { }
 
   ngOnInit() {
@@ -34,4 +34,9 @@ export class AppComponent {
       this.changeRef.detectChanges();
     })
   }
+
+  goBack() {
+    this.navigationService.back()
+  }
+
 }

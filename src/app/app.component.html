@@ -1,33 +1,44 @@
 <mat-sidenav-container>
-  <mat-sidenav #drawer fixedInViewport="true" [opened]="drawer.opened" hasBackdrop="false" mode="side" position="end">
+  <mat-sidenav #drawer fixedInViewport="true" [opened]="drawer.opened" hasBackdrop="false" mode="push" position="end">
     <mat-toolbar color="primary" class="menu-right">
       <div class="menu-text">Menu</div>
       <div>
-      <button mat-icon-button aria-label="Main menu" (click)="drawer.toggle()" >
-        <mat-icon>menu</mat-icon>
-      </button>
-    </div>
+        <button mat-icon-button aria-label="Main menu" (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
     </mat-toolbar>
     <mat-nav-list>
-      <mat-list-item >
+      <mat-list-item>
         <mat-icon>insert_chart_outlined</mat-icon>
-        <a href="/" i18n="Menu | Dashboard">Dashboard</a>
+        <button i18n="Menu | Dashboard" mat-button routerLink="/">Dashboard</button>
+        <!--<a href="/" i18n="Menu | Dashboard">Dashboard</a>-->
       </mat-list-item>
       <mat-list-item class="menu-right">
         <mat-icon>list</mat-icon>
-        <a href="/tracks" i18n="Menu | Ranking">Track ranking</a>
+        <button i18n="Menu | Ranking" mat-button routerLink="/tracks">Track ranking</button>
+        <!--<a href="/tracks" i18n="Menu | Ranking">Track ranking</a>-->
       </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary" class="position-fixed top-toolbar mat-elevation-z5">
       <div class="toolbar-inside">
+        <div class="toolbar-back">
+          <button mat-icon-button class="menu-button" aria-label="Back" [disabled]="!this.navigationService.hasHistory"
+            (click)="goBack()">
+            <mat-icon>navigate_before</mat-icon>
+          </button>
+        </div>
         <div class="toolbar-logo">
           <a href="/"><img src="assets/rsrx.png" /></a>
         </div>
-        <div class="toolbar-title"><h1>{{ pageTitle }}</h1></div>
+        <div class="toolbar-title">
+          <h1>{{ pageTitle }}</h1>
+        </div>
         <div class="toolbar-button">
-          <button *ngIf="!drawer.opened"  mat-icon-button aria-label="Main menu" (click)="drawer.toggle()" class="menu-button" >
+          <button *ngIf="!drawer.opened" mat-icon-button aria-label="Main menu" (click)="drawer.toggle()"
+            class="menu-button">
             <mat-icon>menu</mat-icon>
           </button>
         </div>
