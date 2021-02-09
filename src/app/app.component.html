@@ -1,5 +1,5 @@
 <mat-sidenav-container>
-  <mat-sidenav #drawer fixedInViewport="true" [opened]="drawer.opened" hasBackdrop="false" mode="push" position="end">
+  <mat-sidenav #drawer fixedInViewport="true" [opened]="drawer.opened" hasBackdrop="false" mode="side" position="end">
     <mat-toolbar color="primary" class="menu-right">
       <div class="menu-text">Menu</div>
       <div>
@@ -11,11 +11,11 @@
     <mat-nav-list>
       <mat-list-item >
         <mat-icon>insert_chart_outlined</mat-icon>
-        <a href="#" i18n="Menu | Dashboard">Dashboard</a>
+        <a href="/" i18n="Menu | Dashboard">Dashboard</a>
       </mat-list-item>
       <mat-list-item class="menu-right">
         <mat-icon>list</mat-icon>
-        <a href="#" i18n="Menu | Ranking">Track ranking</a>
+        <a href="/tracks" i18n="Menu | Ranking">Track ranking</a>
       </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>

@@ -6,11 +6,122 @@
 .mat-card {
   margin-bottom: 15px;
 }
+.track-banner-container {
+  padding-left:15px;
+  padding-right: 15px;
+  width: calc(100vw - 30px);
+}
+
+.track-banner {
+  height: 180px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+}
+.banner-1 {
+  background: center url(../../../assets/tracks/1.jpg);
+  background-size: cover;
+}
+
+.banner-2 {
+  background: center url(../../../assets/tracks/2.jpg);
+  background-size: cover;
+}
+
+.banner-3 {
+  background: center url(../../../assets/tracks/3.jpg);
+  background-size: cover;
+}
+
+.banner-4 {
+  background: center url(../../../assets/tracks/4.jpg);
+  background-size: cover;
+}
+
+.banner-5 {
+  background: center url(../../../assets/tracks/5.jpg);
+  background-size: cover;
+}
+
+.banner-6 {
+  background: center url(../../../assets/tracks/6.jpg);
+  background-size: cover;
+}
+
+.banner-7 {
+  background: center url(../../../assets/tracks/7.jpg);
+  background-size: cover;
+}
+
+.banner-8 {
+  background: center url(../../../assets/tracks/8.jpg);
+  background-size: cover;
+}
+
+.banner-9 {
+  background: center url(../../../assets/tracks/9.jpg);
+  background-size: cover;
+}
+
+.banner-10 {
+  background: center url(../../../assets/tracks/10.jpg);
+  background-size: cover;
+}
+
+.banner-11 {
+  background: center url(../../../assets/tracks/11.jpg);
+  background-size: cover;
+}
+
+.banner-12 {
+  background: center url(../../../assets/tracks/12.jpg);
+  background-size: cover;
+}
+
+.banner-13 {
+  background: center url(../../../assets/tracks/13.jpg);
+  background-size: cover;
+}
+
+.track-banner-rx {
+  background: center url(../../../assets/tracks/rx.jpg);
+  height: 180px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.track-banner-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #212121c9;
+  border: 1px solid #e9e22e;
+  padding: 5px 30px 5px 30px;
+}
 
 .list-title {
   width: 100%;
   background-color: #393939;
   font-weight: 500;
-  display: flex;
-  justify-content: center;
+}
+
+.track-title {
+  font-size:1.8em;
+  line-height: 44px;
+}
+
+.track-info {
+  font-size:1.0em;
+  line-height: 44px;
+  color:#e0e0e0;
+  font-weight: 500;
 }

@@ -10,6 +10,7 @@ const userUrl = '/api/users/nickname/:nickname';
 const loginUrl = '/api/auth/';
 const lapUrl = '/api/stats/laps/';
 const raceUrl = '/api/stats/races/';
+const trackUrl = '/api/stats/tracks/:id';
 const tracksUrl = '/api/stats/tracks/';
 const racesByLengthUrl = '/api/stats/tracks/:id/users/:userId/races';
 const bestLapsUrl = '/api/stats/laps/best/:id';
@@ -75,6 +76,12 @@ export class ApiService {
   sendRace(race: any): Observable<any> {
     console.log("sendRace", race);
     return this.http.post<any>(raceUrl, race).pipe(
+      catchError(this.handleError));
+  }
+
+  getTrackInfo(trackId): Observable<any> {
+    let url = trackUrl.replace(':id', trackId)
+    return this.http.get<any>(url).pipe(
       catchError(this.handleError));
   }
 

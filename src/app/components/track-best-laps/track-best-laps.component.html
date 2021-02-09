@@ -2,18 +2,34 @@
     <mat-card-content>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12 col-lg-6 col-xl-6">
-                    <app-track-ranking [trackId]="trackId"></app-track-ranking>
+                <div class="col-md-12" class="track-banner-container">
+                    <div class="track-banner banner-{{ track.id }}">
+                        <div class="track-banner-text">
+                            <div class="track-title">
+                                <img src="assets/flags/{{ track.country }}.png" class="flag" /> {{ track.name }}
+                            </div>
+                            <div class="track-info">
+                                {{ track.length | number:'1.0-0' }}m ({{ track.asphalt }}% <span
+                                    i18n="Track | Asphalt">asphalt</span> / {{ track.gravel }}% <span
+                                    i18n="Track | Asphalt">gravel</span>)
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div class="row">
                 <div class="col-md-12 col-lg-6 col-xl-6">
                     <mat-list>
                         <mat-list-item class="list-title">
-                          <div>Lap time history</div>
+                            <div>Lap time history</div>
                         </mat-list-item>
                     </mat-list>
                     <br />
                     <div echarts id="bestLapsHistory" [theme]="theme" [options]="options" [loading]="isLoading"
                         (chartInit)="onChartInit($event)"></div>
+                </div>
+                <div class="col-md-12 col-lg-6 col-xl-6">
+                    <app-track-ranking [trackId]="trackId"></app-track-ranking>
                 </div>
             </div>
         </div>

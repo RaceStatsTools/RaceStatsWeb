@@ -11,9 +11,9 @@ import { max } from 'rxjs/operators';
 })
 export class TrackBestLapsComponent implements OnInit, OnChanges {
   @Input() trackId: string = '';
-  @Input() userId ;
+  @Input() userId;
   @ViewChild('bestLapsHistory') bestLapsHistory: HTMLElement;
-  theme: string ="racestats"
+  theme: string = "racestats"
   echartsInstance: any;
   minMax = {
     min: 60,
@@ -23,6 +23,7 @@ export class TrackBestLapsComponent implements OnInit, OnChanges {
   history: any = [];
   record: any = [];
   isLoading = false;
+  track: any = {};
 
   options = {
     darkMode: true,
@@ -39,7 +40,7 @@ export class TrackBestLapsComponent implements OnInit, OnChanges {
       }
     },
     legend: {
-      data: ['Best lap times', 'Track record']
+      data: ['Track record']
     },
     grid: {
       left: '3%',
@@ -101,7 +102,7 @@ export class TrackBestLapsComponent implements OnInit, OnChanges {
         connectNulls: true,
         emphasis: [{
           scale: false,
-          }],
+        }],
         data: [],
 
       },
@@ -137,17 +138,20 @@ export class TrackBestLapsComponent implements OnInit, OnChanges {
 
   onChartInit(ec) {
     this.echartsInstance = ec;
-    this.apiService
-      .listBestLapsHistory(this.trackId, 30, this.userId)
-      .subscribe(history => {
-        this.history = history;
-        let minMax = this.getMinMaxTime(this.history)
-        this.options.yAxis[0].min = this.options.yAxis[0].min < this.minMax.min - 1 ? this.options.yAxis[0].min : this.minMax.min - 1;
-        this.options.yAxis[0].max = this.options.yAxis[0].max > this.minMax.max + 1 ? this.options.yAxis[0].max : this.minMax.max + 1;
-        this.options.series[1].data = this.history;
-        this.echartsInstance.setOption(this.options);
+    if (this.userId > 0) {
+      this.apiService
+        .listBestLapsHistory(this.trackId, 30, this.userId)
+        .subscribe(history => {
+          this.history = history;
+          let minMax = this.getMinMaxTime(this.history)
+          this.options.legend.data = ['Best lap times', 'Track record']
+          this.options.yAxis[0].min = this.options.yAxis[0].min < this.minMax.min - 1 ? this.options.yAxis[0].min : this.minMax.min - 1;
+          this.options.yAxis[0].max = this.options.yAxis[0].max > this.minMax.max + 1 ? this.options.yAxis[0].max : this.minMax.max + 1;
+          this.options.series[1].data = this.history;
+          this.echartsInstance.setOption(this.options);
 
-      })
+        })
+    }
 
     this.apiService
       .listBestLapsHistory(this.trackId, 30, 0)
@@ -163,17 +167,20 @@ export class TrackBestLapsComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    this.apiService
-      .listBestLapsHistory(this.trackId, 30, this.userId)
-      .subscribe(history => {
-        this.history = history;
-        let minMax = this.getMinMaxTime(this.history)
-        this.options.yAxis[0].min = this.options.yAxis[0].min < this.minMax.min - 1 ? this.options.yAxis[0].min : this.minMax.min - 1;
-        this.options.yAxis[0].max = this.options.yAxis[0].max > this.minMax.max + 1 ? this.options.yAxis[0].max : this.minMax.max + 1;
-        this.options.series[1].data = this.history;
-        this.echartsInstance.setOption(this.options);
-
-      })
+    if (this.echartsInstance) {
+      if (this.userId > 0) {
+        this.apiService
+          .listBestLapsHistory(this.trackId, 30, this.userId)
+          .subscribe(history => {
+            this.history = history;
+            let minMax = this.getMinMaxTime(this.history)
+            this.options.legend.data = ['Best lap times', 'Track record']
+            this.options.yAxis[0].min = this.options.yAxis[0].min < this.minMax.min - 1 ? this.options.yAxis[0].min : this.minMax.min - 1;
+            this.options.yAxis[0].max = this.options.yAxis[0].max > this.minMax.max + 1 ? this.options.yAxis[0].max : this.minMax.max + 1;
+            this.options.series[1].data = this.history;
+            this.echartsInstance.setOption(this.options);
+          })
+      }
 
     this.apiService
       .listBestLapsHistory(this.trackId, 30, 0)
@@ -184,17 +191,20 @@ export class TrackBestLapsComponent implements OnInit, OnChanges {
         this.options.yAxis[0].max = this.options.yAxis[0].max > this.minMax.max + 1 ? this.options.yAxis[0].max : this.minMax.max + 1;
         this.options.series[0].data = this.record;
         this.echartsInstance.setOption(this.options);
-
       })
+    }
+
+    this.apiService.getTrackInfo(this.trackId).subscribe(track => {
+      this.track = track;
+    })
   }
 
   getMinMaxTime(times: Array<number>) {
     times.forEach(time => {
       if (time) {
-        this.minMax.min = this.minMax.min == 0 || time < this.minMax.min ? time : this.minMax.min;
-        this.minMax.max = this.minMax.max == 0 || time > this.minMax.max ? time : this.minMax.max;
+        this.minMax.min = this.minMax.min == 0 || time < this.minMax.min ? Math.round(time) : this.minMax.min;
+        this.minMax.max = this.minMax.max == 0 || time > this.minMax.max ? Math.round(time) : this.minMax.max;
       }
     })
   }
-
 }

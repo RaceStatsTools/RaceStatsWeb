@@ -10,7 +10,7 @@ import { StoreService } from 'src/app/services/store.service';
 })
 export class TracksComponent implements OnInit {
   tracks:any[] = []
-  @Input() userId: number;
+  @Input() userId: number = -1;
 
   constructor(
     private apiService: ApiService,

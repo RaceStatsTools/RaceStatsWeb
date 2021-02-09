@@ -1,5 +1,39 @@
-.app-div {
-    margin-left: 18px;
-    margin-right: 18px;
-    margin-top: 18px;
+
+.mat-tab-group {
+  height: calc(100vh - 60px);
+  overflow-y: scroll !important;
+}
+
+@media (max-width: 599px) {
+  ::ng-deep .mat-tab-header {
+    //display: flex;
+    //overflow: hidden;
+    //position: fixed !important;
+    //margin-top: -14px;
+    //z-index: 100000;
+    //position: sticky !important;
+    //top: 56px;
+    //flex-shrink: 0;
   }
+  
+  ::ng-deep .mat-tab-body-wrapper {
+    // margin-top: 32px !important;
+  }
+}
+@media (min-width: 600px) {
+  ::ng-deep .mat-tab-header {
+    //display: flex;
+    //overflow: hidden;
+    //position: fixed !important;
+    //margin-top: -6px;
+    //z-index: 100000;
+    //position: sticky !important;
+    //top: 56px;
+    //flex-shrink: 0;
+  }
+
+  ::ng-deep .mat-tab-body-wrapper {
+    //margin-top: 32px !important;
+  }
+}
+
